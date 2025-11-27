@@ -2,53 +2,56 @@
 import Layout from '../layouts/Layout.astro';
 
 const bio = `
-我叫 LittleTiger，是一名热爱技术与创新的开发者。
-我对Web开发、人工智能和开源项目充满热情。
+我是一个热爱生活的普通小伙伴，在这里记录我的点点滴滴。
+除了工作学习之外，还有很多有趣的爱好和发现想要分享给大家。
 `;
 
 const skills = [
-  { name: "前端开发", level: "精通" },
-  { name: "后端开发", level: "熟练" },
-  { name: "移动应用开发", level: "了解" },
-  { name: "UI/UX设计", level: "熟悉" }
+    { name: '摄影', level: '业余爱好者' },
+    { name: '烹饪', level: '进阶吃货' },
+    { name: '旅行规划', level: '资深玩家' },
+    { name: '生活美学', level: '终身学习者' }
 ];
 ---
 
 <Layout title="关于我 - LittleTiger">
-  <div class="py-12">
-    <h1 class="text-3xl font-bold mb-8">关于我</h1>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div>
-        <h2 class="text-2xl font-semibold mb-4">个人简介</h2>
-        <p class="mb-6 leading-relaxed">{bio}</p>
-        
-        <h3 class="text-xl font-semibold mb-4">技能</h3>
-        <ul class="space-y-2">
-          {skills.map((skill) => (
-            <li class="flex justify-between border-b border-gray-700 pb-2">
-              <span>{skill.name}</span>
-              <span class="text-primary">{skill.level}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      
-      <div>
-        <h2 class="text-2xl font-semibold mb-4">教育背景</h2>
-        <div class="mb-6 p-4 bg-gray-800 rounded-lg">
-          <h3 class="text-lg font-medium">计算机科学学士</h3>
-          <p class="text-primary">某知名大学</p>
-          <p class="text-sm text-gray-400">2016 - 2020</p>
+    <div class="py-12">
+        <h1 class="text-3xl font-bold mb-8">关于我</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">关于我</h2>
+                <p class="mb-6 leading-relaxed">{bio}</p>
+
+                <h3 class="text-xl font-semibold mb-4">我的特长</h3>
+                <ul class="space-y-2">
+                    {
+                        skills.map((skill) => (
+                            <li class="flex justify-between border-b border-gray-200 pb-2">
+                                <span>{skill.name}</span>
+                                <span class="text-primary">{skill.level}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">我的故事</h2>
+                <div class="mb-6 p-4 bg-white rounded-lg shadow">
+                    <p class="mb-3">我是一个普通的学生，但对生活充满热情。</p>
+                    <p class="mb-3">平时喜欢到处走走逛逛，品尝各种美食，记录生活中的美好瞬间。</p>
+                    <p>希望通过这个小天地，能和你分享更多有趣的事物！</p>
+                </div>
+
+                <h2 class="text-2xl font-semibold mb-4 mt-8">联系方式</h2>
+                <div class="mb-6 p-4 bg-white rounded-lg shadow">
+                    <p class="mb-2">如果你想和我交流或者有任何建议，欢迎通过以下方式联系我：</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Email: 2039667961@qq.com</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-        <h2 class="text-2xl font-semibold mb-4 mt-8">工作经历</h2>
-        <div class="mb-6 p-4 bg-gray-800 rounded-lg">
-          <h3 class="text-lg font-medium">高级前端工程师</h3>
-          <p class="text-primary">某科技公司</p>
-          <p class="text-sm text-gray-400">2020 - 至今</p>
-        </div>
-      </div>
     </div>
-  </div>
 </Layout>

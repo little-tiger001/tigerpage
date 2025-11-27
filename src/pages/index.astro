@@ -2,20 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 
 const introText = `
-欢迎来到我的个人网站！我是 LittleTiger，这是一个展示我作品和技术能力的地方。
-在这里你可以了解更多关于我的信息，查看我的项目，以及联系我。
+欢迎来到我的个人空间！这里是我记录生活点滴、分享兴趣爱好的地方。
+很高兴你能来参观，希望你会喜欢这里的内容。
 `;
 ---
 
-<Layout title="LittleTiger - 个人网站">
-    <div class="text-center py-20">
-        <h1 class="text-4xl font-bold mb-6">你好，我是 LittleTiger</h1>
+<Layout title="我的个人空间">
+    <div class="text-center py-12">
+        <h1 class="text-3xl font-bold mb-6">欢迎来到我的个人空间</h1>
         <div class="max-w-2xl mx-auto text-lg">
             <p class="mb-6">{introText}</p>
-            <p class="mb-8">感谢访问我的个人网站，请浏览我的作品和项目。</p>
-            <div class="flex justify-center gap-4">
-                <a href="/projects" class="btn btn-lg sm:min-w-48">我的项目</a>
-                <a href="/about" class="btn btn-lg sm:min-w-48">关于我</a>
+            <p class="mb-8">在这里，我分享自己的兴趣爱好、收集的有趣网站和生活中的点滴。</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/hobbies" class="btn btn-lg sm:min-w-48 mb-2">兴趣爱好</a>
+                <a href="/bookmarks" class="btn btn-lg sm:min-w-48 mb-2">网站收藏</a>
+                <a href="/about" class="btn btn-lg sm:min-w-48 mb-2">关于我</a>
             </div>
         </div>
     </div>

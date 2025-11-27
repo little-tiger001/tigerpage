@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const hobbies = [
+  {
+    title: "摄影",
+    description: "喜欢用镜头捕捉生活中的美好瞬间，特别是日出日落和街头的人文风景。",
+    icon: "📸"
+  },
+  {
+    title: "烹饪",
+    description: "享受在厨房里创造美味的过程，特别喜欢尝试各种异国料理。",
+    icon: "👨‍🍳"
+  },
+  {
+    title: "旅行",
+    description: "热爱探索新的地方，体验不同的文化和风土人情，留下珍贵的回忆。",
+    icon: "✈️"
+  },
+  {
+    title: "音乐",
+    description: "闲暇时喜欢弹吉他和听音乐，爵士乐和民谣是我的最爱。",
+    icon: "🎸"
+  },
+  {
+    title: "阅读",
+    description: "喜欢在安静的午后阅读各类书籍，从文学小说到科技前沿都有涉猎。",
+    icon: "📚"
+  },
+  {
+    title: "园艺",
+    description: "在阳台上种植各种花草和蔬菜，享受与自然亲近的宁静时光。",
+    icon: "🌱"
+  }
+];
+---
+
+<Layout title="兴趣爱好 - 我的个人空间">
+  <div class="py-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">我的兴趣爱好</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {hobbies.map((hobby) => (
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow p-6">
+          <div class="text-3xl mb-3">{hobby.icon}</div>
+          <h2 class="text-xl font-bold mb-2">{hobby.title}</h2>
+          <p class="text-gray-600">{hobby.description}</p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <h2 class="text-2xl font-bold mb-4">想了解更多？</h2>
+      <p class="mb-6">欢迎关注我的社交媒体账号，获取更多日常分享</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="btn">Instagram</a>
+        <a href="#" class="btn">微博</a>
+        <a href="#" class="btn">小红书</a>
+      </div>
+    </div>
+  </div>
+</Layout>

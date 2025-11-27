@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const bookmarks = [
+  {
+    category: "设计灵感",
+    links: [
+      { title: "Dribbble", url: "https://dribbble.com", description: "全球设计师作品展示平台" },
+      { title: "Behance", url: "https://behance.net", description: "Adobe旗下的创意作品社区" }
+    ]
+  },
+  {
+    category: "学习资源",
+    links: [
+      { title: "MDN Web Docs", url: "https://developer.mozilla.org", description: "Web开发权威文档" },
+      { title: "freeCodeCamp", url: "https://freecodecamp.org", description: "免费编程学习平台" }
+    ]
+  },
+  {
+    category: "有趣工具",
+    links: [
+      { title: "Remove.bg", url: "https://remove.bg", description: "AI一键抠图工具" },
+      { title: "Canva", url: "https://canva.com", description: "在线图形设计工具" }
+    ]
+  },
+  {
+    category: "生活美学",
+    links: [
+      { title: "下厨房", url: "https://xiachufang.com", description: "美食菜谱分享社区" },
+      { title: "一席", url: "https://yixi.tv", description: "人文类演讲视频网站" }
+    ]
+  }
+];
+---
+
+<Layout title="网站收藏 - 我的个人空间">
+  <div class="py-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">我的网站收藏夹</h1>
+    <p class="text-center text-gray-600 mb-12">这里是我平时收集的好网站，分享给你</p>
+    
+    <div class="space-y-10">
+      {bookmarks.map((category) => (
+        <div>
+          <h2 class="text-2xl font-bold mb-4 pb-2 border-b-2 border-primary">{category.category}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {category.links.map((link) => (
+              <a href={link.url} target="_blank" rel="noopener noreferrer" 
+                 class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow border-l-4 border-primary">
+                <h3 class="font-bold text-lg mb-1">{link.title}</h3>
+                <p class="text-gray-600 text-sm">{link.description}</p>
+                <p class="text-primary text-xs mt-2">{link.url}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+      <h2 class="text-2xl font-bold mb-4">有推荐的网站吗？</h2>
+      <p class="mb-6">如果你也有觉得不错的网站，欢迎告诉我！</p>
+      <a href="/contact" class="btn btn-lg inline-block">联系我们</a>
+    </div>
+  </div>
+</Layout>
